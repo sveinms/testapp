@@ -1,0 +1,28 @@
+<% locals.each do |p| %>
+ 	<% p.each do |position| %>
+ 	<% set :jobTitle, position['jobTitle'] %>
+ 	<% set :jobId, position['id'] %>
+ 	<% set :jobDescription, position['jobDescription'] %>
+ 	<% set :jobRequirements, position['jobRequirements'] %>
+  	<% set :publishStartdate, position['publishStartdate'] %>	
+ 	<% set :publishEnddate, position['publishEnddate'] %>
+ 	<% set :contactName, position['contactName'] %>
+ 	<% set :contactPhone, position['contactPhone'] %>
+ 	<% set :contactEmail, position['contactEmail'] %>
+ 	<% set :country, position['country'] %> 	
+	<% end %>
+
+
+<% end %>
+
+<%= jobId %>
+<%= jobTitle %>
+<%= jobDescription %>
+<%= jobRequirements %>
+<%= publishStartdate %>
+<%= publishEnddate %>
+<%= contactName %>
+<%= contactPhone %>
+<%= contactEmail %>
+<%= country %>
+
