@@ -1,3 +1,4 @@
+
 require "extensions/views"
 
 activate :views
