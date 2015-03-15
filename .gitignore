@@ -3,3 +3,5 @@
 /.cache
 /.sass-cache
 /build
+/data
+/.playground-space-hash/
