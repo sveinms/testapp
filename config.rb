@@ -18,6 +18,10 @@ end
 configure :build do
   # Relative assets needed to deploy to Github Pages
   activate :relative_assets
+  # Assumes the file source/about/template.html.erb exists
+  data.playground.position.each do |id , position|
+    proxy "/positions/#{position.jobTitle.parameterize}.html", "/positions/template.html", :locals => { :position => position }, :ignore => true
+  end
 end
 
 activate :deploy do |deploy|
@@ -36,4 +40,12 @@ helpers do
     options[:class] << " active" if page_url == current_url
     link_to(link_text, page_url, options)
   end
+
+  # Contentful plugin 
+  activate :contentful do |f|
+    f.space         = {playground: '12yz202mwxwc'}
+    f.access_token  = '73d810b86f8ca023c3012098c76fe0bb9cc195b24b97fa3ebdc2026ff5bc8167'
+    f.cda_query     = { content_type: '5L6cg0jdReS4KM0eO8QcGY', include: 1 }
+    f.content_types = { position: '5L6cg0jdReS4KM0eO8QcGY'}
+  end  
 end
