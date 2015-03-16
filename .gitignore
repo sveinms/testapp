@@ -1,7 +1,8 @@
-.DS_Store
+*.DS_Store
 /.bundle
 /.cache
 /.sass-cache
 /build
+/build/.DS_Store
 /data
 /.playground-space-hash/
