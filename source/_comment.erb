@@ -1,0 +1,28 @@
+---
+title: Oversikt over alle ledige stillinger
+---
+
+<% data.playground.position.each do |id,p| %>
+<div class="comment">
+  <div class="comment-image">
+    <!--<%= image_tag lorem.image('20x20', :random_color => true) %>-->
+  </div>
+  <div class="comment-content">
+    <h1>
+      <%= p[:jobTitle] %>
+    </h1>
+    <p>
+      <%= p[:Division] %>
+    </p>
+    <p class="comment-detail">
+      <%= p[:jobDescription] %>
+    </p>
+    <%= link_to p.jobTitle, "/positions/#{p.jobTitle.parameterize}.html" %>
+  </div>
+</div>
+
+<% end %>
+
+
+
+

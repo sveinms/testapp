@@ -1,4 +1,3 @@
-
 require "extensions/views"
 
 activate :views
@@ -29,6 +28,20 @@ activate :deploy do |deploy|
   deploy.method = :git
 end
 
+# before build hooks
+before_build do |builder|
+  print "Before build we look for changes in Contentful"
+  system("middleman contentful")
+end
+
+  # Contentful plugin 
+  activate :contentful do |f|
+    f.space         = {playground: '12yz202mwxwc'}
+    f.access_token  = '73d810b86f8ca023c3012098c76fe0bb9cc195b24b97fa3ebdc2026ff5bc8167'
+    f.cda_query     = { content_type: '5L6cg0jdReS4KM0eO8QcGY', include: 1 }
+    f.content_types = { position: '5L6cg0jdReS4KM0eO8QcGY'}
+  end 
+
 helpers do
   def nav_link(link_text, page_url, options = {})
     options[:class] ||= ""
@@ -39,13 +52,5 @@ helpers do
     end
     options[:class] << " active" if page_url == current_url
     link_to(link_text, page_url, options)
-  end
-
-  # Contentful plugin 
-  activate :contentful do |f|
-    f.space         = {playground: '12yz202mwxwc'}
-    f.access_token  = '73d810b86f8ca023c3012098c76fe0bb9cc195b24b97fa3ebdc2026ff5bc8167'
-    f.cda_query     = { content_type: '5L6cg0jdReS4KM0eO8QcGY', include: 1 }
-    f.content_types = { position: '5L6cg0jdReS4KM0eO8QcGY'}
-  end  
+  end 
 end

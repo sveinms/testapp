@@ -1,0 +1,17 @@
+---
+title: Oversikt over alle ledige stillinger
+---
+
+<nav>
+	<ul class="top-nav">
+		<% data.playground.position.each do |id,p| %> 
+		<li><%= link_to p.jobTitle, "/positions/#{p.jobTitle.parameterize}.html" %></li>
+		<% end %>
+		<%= lorem.sentences 5 %>
+
+		<%= pluralize(2, 'person') %>
+
+  		<%= image_tag lorem.image('300x400', :random_color => true) %>
+	</ul>
+</nav>		
+
