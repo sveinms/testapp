@@ -1,0 +1,44 @@
+/* line 1, /Users/sveinms/Sites/testapp/source/assets/stylesheets/comment.css.scss */
+.comment {
+  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+  display: table;
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  width: 100%; }
+  /* line 24, /Users/sveinms/Sites/testapp/source/assets/stylesheets/comment.css.scss */
+  .comment .comment-image,
+  .comment .comment-content {
+    display: table-cell;
+    vertical-align: top; }
+  /* line 30, /Users/sveinms/Sites/testapp/source/assets/stylesheets/comment.css.scss */
+  .comment .comment-image {
+    padding-right: 1.4em; }
+    /* line 33, /Users/sveinms/Sites/testapp/source/assets/stylesheets/comment.css.scss */
+    .comment .comment-image > img {
+      background: #82a7db;
+      border-radius: 3px;
+      display: block;
+      height: auto;
+      max-width: none;
+      padding: 0.7em;
+      width: 4em; }
+    /* line 43, /Users/sveinms/Sites/testapp/source/assets/stylesheets/comment.css.scss */
+    .comment-reverse-order .comment .comment-image {
+      padding-right: 0;
+      padding-left: 10px; }
+  /* line 49, /Users/sveinms/Sites/testapp/source/assets/stylesheets/comment.css.scss */
+  .comment .comment-content {
+    width: 100%; }
+    /* line 52, /Users/sveinms/Sites/testapp/source/assets/stylesheets/comment.css.scss */
+    .comment .comment-content h1 {
+      font-size: 1em;
+      margin: 0 0 0.5em 0; }
+    /* line 57, /Users/sveinms/Sites/testapp/source/assets/stylesheets/comment.css.scss */
+    .comment .comment-content p {
+      line-height: 1.5em;
+      margin-bottom: 0.5em; }
+    /* line 62, /Users/sveinms/Sites/testapp/source/assets/stylesheets/comment.css.scss */
+    .comment .comment-content p.comment-detail {
+      color: rgba(51, 51, 51, 0.5);
+      font-size: 0.9em;
+      font-style: italic; }
